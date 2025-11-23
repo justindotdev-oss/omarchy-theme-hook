@@ -37,7 +37,7 @@ theme-hook-update
 - Discord
 - Firefox
 - Ghostty
-- GTK (Nautilus/Files)
+- GTK (requires `adw-gtk-theme` from the AUR)
 - Hyprland
 - Kitty
 - Mako
