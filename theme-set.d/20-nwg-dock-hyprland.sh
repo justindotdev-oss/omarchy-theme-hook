@@ -3,6 +3,10 @@
 output_file="$HOME/.config/omarchy/current/theme/nwg-dock.css"
 icon_size=22
 
+if ! command -v nwg-dock-hyprland >/dev/null 2>&1; then
+    skipped "NWG Dock"
+fi
+
 if [[ ! -f "$output_file" ]]; then
     cat > "$output_file" << EOF
 window {
@@ -27,6 +31,7 @@ button:hover {
 EOF
 fi
 
+mkdir -p "$HOME/.config/nwg-dock-hyprland"
 style_file="$HOME/.config/nwg-dock-hyprland/style.css"
 if [[ ! -f $style_file ]]; then
     cat > $style_file << EOF
