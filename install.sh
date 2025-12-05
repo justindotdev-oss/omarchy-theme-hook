@@ -6,12 +6,12 @@ omarchy-show-logo
 
 # Install prerequisites
 if ! pacman -Qi "adw-gtk-theme" &>/dev/null; then
-    gum style --border normal --border-foreground 6 --padding "1 2" \
+  gum style --border normal --border-foreground 6 --padding "1 2" \
     "\"adw-gtk-theme\" is required to theme GTK applications."
 
-    if gum confirm "Would you like to install \"adw-gtk-theme\"?"; then
-        sudo pacman -S adw-gtk-theme
-    fi
+  if gum confirm "Would you like to install \"adw-gtk-theme\"?"; then
+    sudo pacman -S adw-gtk-theme
+  fi
 fi
 
 # Remove any old temp files
@@ -19,7 +19,7 @@ rm -rf /tmp/theme-hook/
 
 # Clone the Omarchy theme hook repository
 echo -e "Cloning Omarchy theme hook repository.."
-git clone https://github.com/imbypass/omarchy-theme-hook.git /tmp/theme-hook > /dev/null
+git clone https://github.com/justindotdev-oss/omarchy-theme-hook.git /tmp/theme-hook >/dev/null
 
 # Create an update alias
 mv -f /tmp/theme-hook/install.sh $HOME/.local/share/omarchy/bin/theme-hook-update
